@@ -62,7 +62,7 @@ First, include the jQuery and jQuery easing plugin javascript files.
 ### Popover
 ```html
 <div style="display:none;" width="130" shadow="true" popover>
-    <div style="width:100%;text-align:center;">{[content]}</div>
+    <div style="width:100%;text-align:center;">[content]</div>
 </div>
 ```
 
@@ -126,7 +126,7 @@ We pass parameters when calling the above coordinate the event. Before the callb
 <div style="display:none;" easypin-tpl>
     <popover>
         <div style="width:140px;height:auto;background-color:orange;">
-            {[content]}
+            [content]
         </div>
     </popover>
 
