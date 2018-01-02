@@ -1,3 +1,4 @@
+// https://raw.githubusercontent.com/sahilchopra/jquery.easypin/master/dist/jquery.easypin.js
 (function($) {
 
     $.fn.easypin = function(options) {
@@ -624,10 +625,8 @@
             depends.allCanvas.each(function(i) {
                 $(this).css('opacity', 0);
             });
-
             $(depends.allCanvas).on('load', function() {
                 loadedImgNum += 1;
-
                 // show loaded image
                 $(this).animate({
                     'opacity': '1'
@@ -635,7 +634,6 @@
                     duration: 'fast',
                     easing: 'easeInQuad'
                 });
-
                 if (loadedImgNum == total) {
 
                     var markerWidth = $(this)[0].width;
@@ -645,7 +643,7 @@
                     depends.success.apply();
                 }
             }).each(function() {
-                if (this.complete) $(this).load();
+                if (this.complete) $(this).trigger('load');
             });
 
         } catch (e) {
@@ -1783,7 +1781,7 @@
                 formData[i] = popoverCallBacks[i].apply(null, args);
             }
 
-            var pattern = RegExp("\\{\\[" + i + "\\]\\}", "g");
+            var pattern = RegExp("\\[" + i + "\\]", "g");
             toHtml = toHtml.replace(pattern, formData[i]);
 
         }
